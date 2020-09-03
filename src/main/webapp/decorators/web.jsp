@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Web master layout</title>
+	<title><dec:title default="home" /></title>
 	<link rel="stylesheet" type="text/css" href="<c:url value='/template/web/vendor/bootstrap/css/bootstrap.min.css'/>">
 	<link rel="stylesheet" type="text/css" href="<c:url value='/template/web/css/small-business.css'/>">
 </head>

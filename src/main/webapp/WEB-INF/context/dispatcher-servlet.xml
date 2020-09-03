@@ -21,7 +21,8 @@
               http://www.springframework.org/schema/context/spring-context.xsd">
 
    <context:component-scan
-      base-package="com.laptrinhjavaweb.controller" />
+      base-package="com.laptrinhjavaweb.controller*" />
+     
 
    <mvc:annotation-driven />
 
@@ -38,5 +39,5 @@
    	  <bean class="com.laptrinhjavaweb.interceptor.MenuHandleInterceptor"></bean>
    </mvc:interceptors> -->
    
-   <mvc:resources location="/template" mapping="/template/**"/>
+   <mvc:resources location="/template/" mapping="/template/**"/>
 </beans>
