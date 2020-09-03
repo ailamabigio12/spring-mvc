@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators defaultdir="/decorators">
-	<!-- apply web template -->
-	<decorator name="web" page="web.jsp">
-		<pattern>/*</pattern>
-	</decorator>
+	<!-- apply api template -->
+	<excludes>
+		<pattern>/api*</pattern>
+	</excludes>
 	
 	<!-- apply admin template -->
 	<decorator name="admin" page="admin.jsp">
 		<pattern>/admin*</pattern>
 	</decorator>
 	
-	<!-- apply api template -->
-	<excludes name="api">
-		<pattern>/api*</pattern>
-	</excludes>
+	<!-- apply web template -->
+	<decorator name="web" page="web.jsp">
+		<pattern>/*</pattern>
+	</decorator>
 </decorators>

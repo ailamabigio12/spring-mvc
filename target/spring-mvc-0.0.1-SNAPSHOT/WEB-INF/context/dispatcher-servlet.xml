@@ -33,4 +33,10 @@
       <property name="suffix" value=".jsp" />
 
    </bean>
+   
+   <!-- <mvc:interceptors>
+   	  <bean class="com.laptrinhjavaweb.interceptor.MenuHandleInterceptor"></bean>
+   </mvc:interceptors> -->
+   
+   <mvc:resources location="/template" mapping="/template/**"/>
 </beans>

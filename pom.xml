@@ -11,11 +11,19 @@
    <jsp.api.version>2.3.1</jsp.api.version>
    <jstl.version>1.2</jstl.version>
    <sitemesh.version>2.4.2</sitemesh.version>
+   <mysql.version>8.0.21</mysql.version>
    <maven.compiler.source>1.8</maven.compiler.source>
    <maven.compiler.target>1.8</maven.compiler.target>
 </properties>
 
 <dependencies>
+	<!-- MySql Driver -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>${mysql.version}</version>
+	</dependency>
+
    <!-- Spring -->
    <dependency>
       <groupId>org.springframework</groupId>
