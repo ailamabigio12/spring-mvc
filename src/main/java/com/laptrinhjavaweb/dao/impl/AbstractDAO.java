@@ -21,7 +21,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		try {
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/newjspservletAug2020";
+			String url = "jdbc:mysql://localhost:3306/jspservletjdbc";
 			String user = "root";
 			String password = "cohuyen2110!";
 			

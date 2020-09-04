@@ -1,38 +1,44 @@
 package com.laptrinhjavaweb.model;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AbstractModel<T> {
 
 	private Long id;
-	private java.sql.Timestamp createdDate;
-	private java.sql.Timestamp modifiedDate;
+	private Timestamp createdDate;
+	private Timestamp modifiedDate;
 	private String createdBy;
 	private String modifiedBy;
 	private long[] ids;
-	private List<T> listResults = new ArrayList<>();
+	private List<T> listResult = new ArrayList<>();
 	private Integer page;
-	private Integer maxPageItems;
-	private Integer totalPages;
-	private Integer totalItems;
+	private Integer maxPageItem;
+	private Integer totalPage;
+	private Integer totalItem;
 	private String sortName;
 	private String sortBy;
 	private String alert;
 	private String message;
 	private String type;
-	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public java.sql.Timestamp getCreatedDate() {
+	public Timestamp getCreatedDate() {
 		return createdDate;
 	}
-	public void setCreatedDate(java.sql.Timestamp timestamp) {
-		this.createdDate = timestamp;
+	public void setCreatedDate(Timestamp createdDate) {
+		this.createdDate = createdDate;
+	}
+	public Timestamp getModifiedDate() {
+		return modifiedDate;
+	}
+	public void setModifiedDate(Timestamp modifiedDate) {
+		this.modifiedDate = modifiedDate;
 	}
 	public String getCreatedBy() {
 		return createdBy;
@@ -46,23 +52,17 @@ public class AbstractModel<T> {
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-	public java.sql.Timestamp getModifiedDate() {
-		return modifiedDate;
-	}
-	public void setModifiedDate(java.sql.Timestamp modifiedDate) {
-		this.modifiedDate = modifiedDate;
-	}
 	public long[] getIds() {
 		return ids;
 	}
 	public void setIds(long[] ids) {
 		this.ids = ids;
 	}
-	public List<T> getListResults() {
-		return listResults;
+	public List<T> getListResult() {
+		return listResult;
 	}
-	public void setListResults(List<T> listResults) {
-		this.listResults = listResults;
+	public void setListResult(List<T> listResult) {
+		this.listResult = listResult;
 	}
 	public Integer getPage() {
 		return page;
@@ -70,23 +70,23 @@ public class AbstractModel<T> {
 	public void setPage(Integer page) {
 		this.page = page;
 	}
-	public Integer getMaxPageItems() {
-		return maxPageItems;
+	public Integer getMaxPageItem() {
+		return maxPageItem;
 	}
-	public void setMaxPageItems(Integer maxPageItems) {
-		this.maxPageItems = maxPageItems;
+	public void setMaxPageItem(Integer maxPageItem) {
+		this.maxPageItem = maxPageItem;
 	}
-	public Integer getTotalPages() {
-		return totalPages;
+	public Integer getTotalPage() {
+		return totalPage;
 	}
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
-	public Integer getTotalItems() {
-		return totalItems;
+	public Integer getTotalItem() {
+		return totalItem;
 	}
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
+	public void setTotalItem(Integer totalItem) {
+		this.totalItem = totalItem;
 	}
 	public String getSortName() {
 		return sortName;
