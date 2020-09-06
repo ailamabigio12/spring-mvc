@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp" %>
+<%@ page import="com.laptrinhjavaweb.util.SecurityUtils" %>
 <!DOCTYPE html PUBLIC>
 
 <div id="navbar" class="navbar navbar-default ace-save-state">
@@ -16,7 +17,7 @@
 			<ul class="nav ace-nav">
 				<li class="light-blue dropdown-modal">
 					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-						Xin chào, []
+						Xin chào, <%=SecurityUtils.getPrincipal().getFullName()%>
 					</a>
 					<li class="Light-blue dropdown-modal">
 						<a href="#">

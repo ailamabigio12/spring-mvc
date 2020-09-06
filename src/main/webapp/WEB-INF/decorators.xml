@@ -10,6 +10,11 @@
 		<pattern>/admin*</pattern>
 	</decorator>
 	
+	<!-- apply login template -->
+	<decorator name="login" page="login.jsp">
+		<pattern>/login*</pattern>
+	</decorator>
+	
 	<!-- apply web template -->
 	<decorator name="web" page="web.jsp">
 		<pattern>/*</pattern>
