@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.dto.NewDTO;
+import com.laptrinhjavaweb.entity.NewEntity;
+import com.laptrinhjavaweb.repository.NewRepository;
 import com.laptrinhjavaweb.service.INewService;
+import com.laptrinhjavaweb.service.impl.NewService;
 
 @Controller(value = "NewControllerOfadmin")
 public class NewController {
@@ -17,10 +20,10 @@ public class NewController {
 	private INewService newService;
 	
 	@RequestMapping(value = "/admin/new/list", method = RequestMethod.GET)
-	public ModelAndView newList(@ModelAttribute("model") NewModel model) {
+	public ModelAndView newList(@ModelAttribute("model") NewDTO newDTO) {
 		ModelAndView mav = new ModelAndView("admin/new/list");
-		model.setListResult(newService.findAll());
-		mav.addObject("model", model);
+		newDTO.setListResult(newService.findAll());
+		mav.addObject("model", newDTO);
 		return mav;
 	}
 	

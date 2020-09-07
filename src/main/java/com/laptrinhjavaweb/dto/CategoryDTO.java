@@ -1,6 +1,6 @@
-package com.laptrinhjavaweb.model;
+package com.laptrinhjavaweb.dto;
 
-public class CategoryModel extends AbstractModel<CategoryModel> {
+public class CategoryDTO extends AbstractDTO<CategoryDTO> {
 
 	private String name;
 	private String code;
@@ -17,5 +17,4 @@ public class CategoryModel extends AbstractModel<CategoryModel> {
 	public void setCode(String code) {
 		this.code = code;
 	}
-	
 }

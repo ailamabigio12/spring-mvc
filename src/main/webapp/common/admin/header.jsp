@@ -15,17 +15,20 @@
 		</div>
 		<div class="navbar-buttons navbar-header pull-right collapse navbar-collapse" role="navigation">
 			<ul class="nav ace-nav">
+				<li class="nav-item">
+	            	<a class="nav-link" href="<c:url value='/home'/>">Website</a>
+	          	</li>
 				<li class="light-blue dropdown-modal">
 					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 						Xin chào, <%=SecurityUtils.getPrincipal().getFullName()%>
 					</a>
 					<li class="Light-blue dropdown-modal">
-						<a href="#">
+						<a href="<c:url value='logout'/>">
 							<i class="ace-icon fa fa-power-off"></i>
 							Thoát
 						</a>
 					</li>
-				</li>
+				</li>				
 			</ul>
 		</div>
 	</div>
