@@ -14,12 +14,12 @@
 			<div class="main-div">
 				<c:if test="${param.incorrectAccount != null}">
 					<div class="alert alert-danger">	
-							Username or password incorrect
+							Tài khoản hoặc mật khẩu không đúng!
 					</div>
 				</c:if>
 				<c:if test="${param.accessDenied != null}">
 					<div class="alert alert-danger">	
-							you Not authorize
+							Bạn không có quyền truy cập vào đường dẫn này!
 					</div>
 				</c:if>
 				<form action="j_spring_security_check" id="formLogin" method="post">

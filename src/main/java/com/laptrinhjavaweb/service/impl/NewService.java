@@ -22,6 +22,12 @@ public class NewService implements INewService{
 		
 		List<NewDTO> models = new ArrayList<>();
 		List<NewEntity> entities = newRepository.findAll();
+		for (NewEntity item: entities) {
+			NewDTO newmodel = new NewDTO();
+			newmodel.setTitle(item.getTitle());
+			newmodel.setShortDescription(item.getShortDescription());
+			models.add(newmodel);
+		}
 		
 		return models;
 	}

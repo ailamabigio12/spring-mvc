@@ -33,8 +33,8 @@ public class JPAConfig {
 		return em;
 	}
 	
-	@Bean
-	JpaTransactionManager TransactionManager(EntityManagerFactory entityManagerFactory) {
+	@Bean(name = "transactionManager")
+	JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
 		transactionManager.setEntityManagerFactory(entityManagerFactory);
 		

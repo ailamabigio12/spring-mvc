@@ -37,4 +37,10 @@ public class HomeController {
 	   
 	   return new ModelAndView("redirect:/home");
    }
+   
+   @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
+   public ModelAndView accessDenied() {
+	   
+	   return new ModelAndView("redirect:/login?accessDenied");
+   }
 }

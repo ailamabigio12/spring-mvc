@@ -23,7 +23,7 @@
 						Xin chào, <%=SecurityUtils.getPrincipal().getFullName()%>
 					</a>
 					<li class="Light-blue dropdown-modal">
-						<a href="<c:url value='logout'/>">
+						<a href="<c:url value='/logout'/>">
 							<i class="ace-icon fa fa-power-off"></i>
 							Thoát
 						</a>
