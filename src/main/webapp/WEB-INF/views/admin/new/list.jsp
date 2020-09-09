@@ -7,11 +7,16 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Danh sách bài viết</title>
+		<!-- Paging -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+	    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+	    <script src="<c:url value='/template/paging/jquery.twbsPagination.js'/>" type="text/javascript"></script>
+	    <!-- Paging -->
 	</head>
-
 	<body>
 		<div class="main-content">
-		<form action="#" id="formSubmit" method="get">
+		<form action="<c:url value='/admin/new/list'/>" id="formSubmit" method="get">
 			
 				<div class="main-content-inner">
 					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -70,9 +75,12 @@
 															</td>
 														</tr>
 													</c:forEach>
-												</tbody>
-											</table>											
-										</div>
+												</tbody>												
+											</table>																					
+										</div>	
+									    <ul class="pagination" id="pagination"></ul>
+									    <input type="hidden" value="" id="page" name="page" />
+									    <input type="hidden" value="" id="limit" name="limit" />
 									</div>
 								</div>
 							</div>
@@ -82,8 +90,23 @@
 		</form>
 		</div>
 		<!-- /.main-content -->
-		<script>
-		
+		<script type="text/javascript">
+			var totalPages = ${model.totalPage};
+			var currentPage = ${model.page};
+		    $(function () {
+		        window.pagObj = $('#pagination').twbsPagination({
+		            totalPages: totalPages,
+		            visiblePages: 5,
+		            startPage: currentPage,
+		            onPageClick: function (event, page) {
+		                if (currentPage != page) {
+		                	$('#page').val(page);
+		                	$('#limit').val(2);
+		                	$('#formSubmit').submit();
+		                }
+		            }
+		        });
+		    });
 		</script>
 	</body>
 
