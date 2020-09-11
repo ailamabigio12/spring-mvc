@@ -1,10 +1,8 @@
 package com.laptrinhjavaweb.service;
 
-import java.util.List;
-
-import com.laptrinhjavaweb.entity.CategoryEntity;
+import java.util.Map;
 
 public interface ICategoryService {
 
-	List<CategoryEntity> findAll();
+	Map<String, String> findAll();
 }

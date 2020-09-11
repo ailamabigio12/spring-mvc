@@ -15,20 +15,20 @@
             </a>
           </li>
           <security:authorize access ="isAnonymous()">
-          <li class="nav-item">
-            <a class="nav-link" href="<c:url value='/login'/>">Đăng nhập</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Đăng ký</a>
-          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="<c:url value='/login'/>">Đăng nhập</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="#">Đăng ký</a>
+	          </li>
           </security:authorize>
           <security:authorize access ="isAuthenticated()">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Welcome, <%=SecurityUtils.getPrincipal().getFullName()%></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<c:url value='/logout'/>">Thoát</a>
-          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="#">Welcome, <%=SecurityUtils.getPrincipal().getFullName()%></a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="<c:url value='/logout'/>">Thoát</a>
+	          </li>
           </security:authorize>
         </ul>
       </div>
