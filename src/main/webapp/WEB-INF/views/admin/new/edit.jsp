@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
+<c:url var="NewURL" value="/admin/new/list"/>
+<c:url var="editNew" value="/admin/new/edit"/>
+<c:url var="NewAPI" value="/api/new"/>
 <html>
 	<head>
 	    <title>Chỉnh sửa bài viết</title>
@@ -34,6 +37,11 @@
 					</div><!-- /.page-header -->
 					<div class="row">
 						<div class="col-xs-12">
+							<c:if test="${not empty message}">
+								<div class="alert alert-${alert}">
+									${message}
+								</div>
+							</c:if>
 							<!-- PAGE CONTENT BEGINS -->
 							<form:form class="form-horizontal" role="form" id="formSubmit" modelAttribute="model">
 								<div class="form-group">
@@ -56,7 +64,7 @@
 									<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Ảnh đại diện </label>
 	
 									<div class="col-sm-10">
-										<form:input path="thumbnail" cssClass="col-xs-10 col-sm-5"/>
+										<form:input path="thumbnail" cssClass="col-xs-10 col-sm-5" type="file" id="thumbnail"/>
 									</div>
 								</div>
 								<div class="form-group">
@@ -71,7 +79,8 @@
 										<form:textarea path="content" rows="10" cols="10" cssClass="form-control" id="content"/>
 									</div>
 								</div>
-								<div class="space-4"></div>
+								<form:hidden path="id" id="newId"/>
+								<div class="space-4 clearfix form-actions"></div>
 									<div class="col-md-offset-3 col-md-9">
 										<c:if test="${not empty model.id}">
 											<button class="btn btn-info" type="button" id="btnAddOrUpdateNew">
@@ -85,6 +94,7 @@
 												Thêm bài viết
 											</button>
 										</c:if>
+										
 										&nbsp; &nbsp; &nbsp;
 										<button class="btn" type="reset" id="reset">
 											<i class="ace-icon fa fa-undo bigger-110"></i>
@@ -102,9 +112,51 @@
 		<script>
 			$('#btnAddOrUpdateNew').click(function (e) {
 				e.preventDefault();
+				var data = {}
 				var formData = $('#formSubmit').serializeArray();
-				console.log(formData);
+				$.each(formData, function (i, v) {
+					data[""+v.name+""] = v.value;
+				});
+				var id = $('#newId').val();
+				if (id == "") {
+					addNew(data);
+				}
+				else {
+					updateNew(data);
+				}
 			});
+			
+			function addNew(data) {
+				$.ajax({
+		            url: '${NewAPI}',
+		            type: 'POST',
+		            contentType: 'application/json',
+		            data: JSON.stringify(data),
+		            dataType: 'json',
+		            success: function (result) {
+		            	window.location.href = "${editNew}?id="+result.id+"&message=insert_success";
+		            },
+		            error: function (error) {
+		            	window.location.href = "${NewURL}?page=1&limit=4&message=error_system";
+		            }
+		        });
+			}
+			
+			function updateNew(data) {
+				$.ajax({
+		            url: '${NewAPI}',
+		            type: 'PUT',
+		            contentType: 'application/json',
+		            data: JSON.stringify(data),
+		            dataType: 'json',
+		            success: function (result) {
+		            	window.location.href = "${editNew}?id="+result.id+"&message=update_success";
+		            },
+		            error: function (error) {
+		            	window.location.href = "${editNew}?id="+result.id+"&message=error_system";
+		            }
+		        });
+			}
 		</script>
 	</body>
 </html>

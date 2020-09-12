@@ -17,10 +17,12 @@
 	<link href="<c:url value='/template/admin/css/ace-rtl.min.css'/>" rel="stylesheet" type="text/css" media="all">
 	<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" media="all">
 	<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all">
+	<link href="<c:url value='/template/sweetAlert/sweetalert2.min.css'/>" rel="stylesheet" type="text/css" media="all">
 	<!-- css -->	
 	
 	<!-- script -->
 	<script src="<c:url value='/template/admin/js/ace-extra.min.js'/>"></script>
+	<script src="<c:url value='/template/sweetAlert/sweetalert2.min.js'/>"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="<c:url value='/template/admin/js/jquery-2.2.3.min.js'/>"></script>
 	<script src="<c:url value='/template/admin/js/jquery-2.1.4.min.js'/>"></script>

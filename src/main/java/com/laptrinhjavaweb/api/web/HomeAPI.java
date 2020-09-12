@@ -15,7 +15,7 @@ public class HomeAPI {
 	
 	@GetMapping("/home")
 	public ModelAndView homePage() {
-		ModelAndView mav = new ModelAndView("web/home");	 
+		ModelAndView mav = new ModelAndView("web/home");
         return mav;
 	}
 	
